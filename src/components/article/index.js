@@ -6,7 +6,6 @@ function Article() {
   let context = useContext(NewsContext);
   let headline = context[2];
 
-  console.log(headline);
 
   return (
     <div className="section article">

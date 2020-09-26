@@ -35,10 +35,6 @@ function Sources() {
     setFavBtn(!favBtn);
   };
 
-  // console.log(toggle);
-  // console.log(sources);
-
-  console.log(favorites);
 
   let activeSource = toggle === false ? "active" : null;
   let activeFavourite = toggle === true ? "active" : null;
@@ -97,7 +93,7 @@ function Sources() {
               <div
                 key={source.id}
                 className="single-source"
-                onClick={() => setSourceID(source.id)}
+                onClick={() => setSourceID({id: source.id, like: source.like})}
               >
                 <h3>{source.name}</h3>
               </div>

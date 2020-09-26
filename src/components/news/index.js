@@ -25,7 +25,6 @@ function News() {
   const onClickHandler = (article) => {
     setHeadline(article);
   };
-  console.log(newsList);
   return (
     <div className="section headline-list">
       {newsList && newsList.length > 0 ? (
@@ -36,7 +35,7 @@ function News() {
               return (
                 <div
                   className="headline"
-                  key={index}
+                  key={`${index}-${article.source.name}`}
                   onClick={() => onClickHandler(article)}
                 >
                   <table>
@@ -62,7 +61,7 @@ function News() {
                     </div>
                     <div>
                       <i
-                      key={`${index}-${article.source.name}`}
+                      key={Date.now()}
                         onClick={() => setFav({...fav, [index]: !fav[index]})}
                         className="fas fa-star"
                         style={{
