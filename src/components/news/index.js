@@ -8,6 +8,8 @@ function News() {
     NewsContext
   );
   const [newsList, setNewsList] = useState([]);
+  const [fav, setFav] = useState({})
+
 
   useEffect(() => {
     if (sourceID) {
@@ -60,9 +62,11 @@ function News() {
                     </div>
                     <div>
                       <i
+                      key={`${index}-${article.source.name}`}
+                        onClick={() => setFav({...fav, [index]: !fav[index]})}
                         className="fas fa-star"
                         style={{
-                          color: sourceID.like
+                          color: fav[index]
                             ? "rgb(207, 91, 101)"
                             : "rgb(160, 156, 156)",
                         }}
