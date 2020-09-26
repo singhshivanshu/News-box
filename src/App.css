@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+@media(max-width: 900px) {
+  .App {
+    flex-wrap: wrap;
+  }
+  .source-list {
+    margin: auto;
+  }
+}
